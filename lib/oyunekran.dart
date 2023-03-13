@@ -13,8 +13,18 @@ class buttonPage extends StatefulWidget {
   State<buttonPage> createState() => _ButtonPage();
 }
 
+
+
 class _ButtonPage extends State<buttonPage> {
-  String randomNumber = 'X';
+
+ List<int> myList = [];
+
+ @override
+  void initState() {
+    super.initState();
+    _randomList();
+  
+  }
 
   var colors = [
     Colors.red,
@@ -60,69 +70,13 @@ class _ButtonPage extends State<buttonPage> {
                   height: 50,
                 ),
                 const Text(
-                  "50",
+                  "",
                   style: TextStyle(fontSize: 70),
                 ),
                 const SizedBox(
                   height: 30,
                 ),
-                Expanded(
-                  flex: 1,
-                  child: Row(
-                    children: [
-                      Expanded(
-                        child: Container(
-                            padding: const EdgeInsets.only(left: 15, right: 10),
-                            width: 800,
-                            color: blackLowOpacity,
-                            child: Row(
-                              children: <Widget>[
-                                // ignore: prefer_const_constructors
-                                Text(
-                                  'TIMER : ',
-                                  // ignore: prefer_const_constructors
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                  ),
-                                  textAlign: TextAlign.center,
-                                ),
-                                Text(
-                                  secCounter.toString(),
-                                  style: const TextStyle(color: Colors.white),
-                                ),
-                              ],
-                            )),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(40.0),
-                        child: Expanded(
-                          child: Container(
-                              margin: const EdgeInsets.only(left: 40),
-                              padding:
-                                  const EdgeInsets.only(left: 15, right: 15),
-                              width: 100,
-                              color: blackLowOpacity,
-                              child: Row(
-                                children: <Widget>[
-                                  // ignore: prefer_const_constructors
-                                  Text(
-                                    'SCOR : ',
-                                    style: const TextStyle(
-                                      color: Colors.white,
-                                    ),
-                                    textAlign: TextAlign.center,
-                                  ),
-                                  Text(
-                                    secCounter.toString(),
-                                    style: const TextStyle(color: Colors.white),
-                                  ),
-                                ],
-                              )),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+             
                 Expanded(
                   flex: 1,
                   child: Row(
@@ -131,7 +85,7 @@ class _ButtonPage extends State<buttonPage> {
                         flex: 1,
                         child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: boxColor,
+                           
                             padding: const EdgeInsets.fromLTRB(
                               60.0,
                               40.0,
@@ -140,7 +94,7 @@ class _ButtonPage extends State<buttonPage> {
                             ),
                           ),
                           onPressed: setRandomColor,
-                          child: const Text(''),
+                            child:  Text(myList[0].toString()),
                         ),
                       ),
                       Padding(
@@ -149,12 +103,12 @@ class _ButtonPage extends State<buttonPage> {
                           flex: 1,
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: currentColor,
+                              
                               padding: const EdgeInsets.fromLTRB(
                                   60.0, 40.0, 60.0, 40.0),
                             ),
                             onPressed: setRandomColor,
-                            child: const Text(''),
+                            child:  Text(myList[1].toString()),
                           ),
                         ),
                       ),
@@ -162,15 +116,14 @@ class _ButtonPage extends State<buttonPage> {
                         flex: 1,
                         child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.blue,
+                              
                               padding: const EdgeInsets.fromLTRB(
                                   60.0, 40.0, 60.0, 40.0),
                             ),
-                            child: const Text(''),
+                            child:  Text(myList[2].toString()),
                             onPressed: () {
                               setState(() {
-                                randomNumber =
-                                    (Random().nextInt(5) + 10).toString();
+                              
                               });
                             }),
                       ),
@@ -185,12 +138,16 @@ class _ButtonPage extends State<buttonPage> {
                         flex: 1,
                         child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.blue,
+                           
                             padding: const EdgeInsets.fromLTRB(
-                                60.0, 40.0, 60.0, 40.0),
+                              60.0,
+                              40.0,
+                              60.0,
+                              40.0,
+                            ),
                           ),
-                          onPressed: () {},
-                          child: const Text(''),
+                          onPressed: setRandomColor,
+                            child:  Text(myList[3].toString()),
                         ),
                       ),
                       Padding(
@@ -199,12 +156,62 @@ class _ButtonPage extends State<buttonPage> {
                           flex: 1,
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.deepPurple,
+                              
+                              padding: const EdgeInsets.fromLTRB(
+                                  60.0, 40.0, 60.0, 40.0),
+                            ),
+                            onPressed: setRandomColor,
+                            child:  Text(myList[4].toString()),
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        flex: 1,
+                        child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              
+                              padding: const EdgeInsets.fromLTRB(
+                                  60.0, 40.0, 60.0, 40.0),
+                            ),
+                            child:  Text(myList[5].toString()),
+                            onPressed: () {
+                              setState(() {
+                              
+                              });
+                            }),
+                      ),
+                    ],
+                  ),
+                ),
+                
+                Expanded(
+                  flex: 1,
+                  child: Row(
+                    children: [
+                      Expanded(
+                        flex: 1,
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                           
+                            padding: const EdgeInsets.fromLTRB(
+                                60.0, 40.0, 60.0, 40.0),
+                          ),
+                          onPressed: () {},
+                            child:  Text(myList[6].toString()),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Expanded(
+                          flex: 1,
+                          child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                            
                               padding: const EdgeInsets.fromLTRB(
                                   60.0, 40.0, 60.0, 40.0),
                             ),
                             onPressed: () {},
-                            child: const Text(''),
+                            child:  Text(myList[7].toString()),
                           ),
                         ),
                       ),
@@ -212,12 +219,12 @@ class _ButtonPage extends State<buttonPage> {
                         flex: 1,
                         child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.blueGrey,
+                           
                             padding: const EdgeInsets.fromLTRB(
                                 60.0, 40.0, 60.0, 40.0),
                           ),
                           onPressed: () {},
-                          child: const Text(''),
+                            child:  Text(myList[8].toString()),
                         ),
                       ),
                     ],
@@ -231,12 +238,12 @@ class _ButtonPage extends State<buttonPage> {
                         flex: 1,
                         child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.brown,
+                           
                             padding: const EdgeInsets.fromLTRB(
                                 60.0, 40.0, 60.0, 40.0),
                           ),
                           onPressed: () {},
-                          child: const Text(''),
+                            child:  Text(myList[9].toString()),
                         ),
                       ),
                       Padding(
@@ -245,12 +252,12 @@ class _ButtonPage extends State<buttonPage> {
                           flex: 1,
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.amber,
+                             
                               padding: const EdgeInsets.fromLTRB(
                                   60.0, 40.0, 60.0, 40.0),
                             ),
                             onPressed: () {},
-                            child: const Text(''),
+                            child:  Text(myList[10].toString()),
                           ),
                         ),
                       ),
@@ -258,12 +265,12 @@ class _ButtonPage extends State<buttonPage> {
                         flex: 1,
                         child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.pink,
+                           
                             padding: const EdgeInsets.fromLTRB(
                                 60.0, 40.0, 60.0, 40.0),
                           ),
                           onPressed: () {},
-                          child: const Text(''),
+                          child:  Text(myList[11].toString()),
                         ),
                       ),
                     ],
@@ -276,4 +283,17 @@ class _ButtonPage extends State<buttonPage> {
       ),
     );
   }
+
+  
+_randomList(){
+  for(int i=0; i < 12; i++) {
+    var randomSayi = Random().nextInt(15);
+   myList.add(randomSayi);
+
+  }
+ debugPrint("Hello $myList");
 }
+
+
+}
+

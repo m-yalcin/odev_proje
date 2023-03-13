@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import "package:flutter/material.dart";
 import 'package:odevflutter/renk.dart';
 
 Row headerInfo(int secCounter, Map<String, int> gameHistory) {

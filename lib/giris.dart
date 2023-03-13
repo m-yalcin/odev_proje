@@ -16,7 +16,7 @@ class HomePage extends StatelessWidget {
           height: screenSize.height,
           // ignore: prefer_const_constructors
           decoration: BoxDecoration(
-            color: Colors.amber,
+            color: Colors.blue.withAlpha(100)
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -29,24 +29,7 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               //Can change to any color you want.
-              Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: ElevatedButton(
-                  onPressed: () {},
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.purple,
-                    padding: const EdgeInsets.fromLTRB(30.0, 15.0, 30.0, 15.0),
-                  ),
-                  // ignore: sort_child_properties_last
-                  child: Text(
-                    'ANA SAYFAYA GERİ DÖN',
-                    style: GoogleFonts.gloriaHallelujah(
-                      fontSize: 13,
-                      color: Colors.black,
-                    ),
-                  ),
-                ),
-              ),
+            
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: ElevatedButton(

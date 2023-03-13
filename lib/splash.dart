@@ -28,7 +28,7 @@ class _SplashState extends State<Splash> {
             Container(
               height: 100,
               width: 100,
-              color: Colors.amber,
+              color: Colors.purple,
             ),
             // ignore: avoid_unnecessary_containers
             Container(

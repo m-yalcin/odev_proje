@@ -28,7 +28,7 @@ class denemepage extends StatelessWidget {
                         child: Row(
                           children: <Widget>[
                             const Text(
-                              'TIMER : ',
+                              ': ',
                               style: TextStyle(
                                 color: Colors.white,
                               ),

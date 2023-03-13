@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:math';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:odevflutter/oyunekran.dart';
+import 'package:odevflutter/yeniekran.dart';
 
 import 'sayacayar.dart';
 import 'package:flutter/material.dart';
@@ -47,7 +48,7 @@ class _SayacEkranState extends State<SayacEkran>
       timer.cancel();
       Navigator.of(context).pushAndRemoveUntil<void>(
         MaterialPageRoute<void>(
-            builder: (BuildContext context) => const buttonPage()),
+            builder: (BuildContext context) =>  GridVievPage()),
         ModalRoute.withName('/'),
       );
     }
@@ -60,7 +61,7 @@ class _SayacEkranState extends State<SayacEkran>
       child: Scaffold(
         body: Center(
           child: Container(
-            color: Colors.amber,
+           color: Colors.blue.withAlpha(100),
             alignment: Alignment(0.0, 0.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -74,7 +75,7 @@ class _SayacEkranState extends State<SayacEkran>
                   'HAZIR OL!',
                   style: GoogleFonts.gloriaHallelujah(
                     fontSize: 20,
-                    color: Colors.black,
+                    color: Colors.purple,
                   ),
                 ),
               ],

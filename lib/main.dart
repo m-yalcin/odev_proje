@@ -1,7 +1,10 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:odevflutter/giris.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
+import 'package:odevflutter/yeniekran.dart';
 
 void main() {
   runApp(const Odevproje());
@@ -20,9 +23,10 @@ class Odevproje extends StatelessWidget {
           splash: Text(
             'NUMBER GAME',
             style: GoogleFonts.rockSalt(fontSize: 35),
+            
           ),
-          duration: 5,
-          backgroundColor: Colors.amber,
+          duration: 10,
+          backgroundColor:  Colors.purple,
           nextScreen: HomePage()),
     );
   }
